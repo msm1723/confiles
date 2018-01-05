@@ -8,9 +8,13 @@ call pathogen#infect()
 call pathogen#helptags()
 
 " turn filetype detection, indent scripts and filetype plugins on
-" and syntax highlighting too
 filetype plugin indent on
+
+" and syntax highlighting too
 syntax on
+
+" leader
+let mapleader=","
 
 set clipboard^=unnamed,unnamedplus " merge with system clopboard
 
@@ -20,7 +24,7 @@ set showmode		" always show what mode we're currently editing in
 set list		" show whitespaces
 set number		" show line numbers
 set mouse=a		" enable mouse
-set showcmd		" show last command	BUT NOT SURE IF IT WORKS
+set showcmd		" show <leader> pressed
 set cursorline		" highlight current line
 set wildmenu		" show mathch files as menu when use TAB
 set lazyredraw		" redraw only when we need to
@@ -28,7 +32,13 @@ set lazyredraw		" redraw only when we need to
 set ignorecase		" ignore case when searching
 set smartcase		" ignore case if search pattern is all lowercase
 
-set cm=blowfish		" set default encryption to blowfish algorithme
+set cm=blowfish2	" set default encryption to blowfish2 algorithme
+
+" Motion mappings
+	nnoremap H 0
+	nnoremap L $
+	nnoremap J G
+	nnoremap K gg
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %

@@ -1,6 +1,4 @@
-# Reference for colors: http://stackoverflow.com/questions/689765/how-can-i-change-the-color-of-my-prompt-in-zsh-different-from-normal-text
-
-autoload -U colors && colors
+toload -U colors && colors
 
 setopt PROMPT_SUBST
 
@@ -14,6 +12,12 @@ set_prompt() {
 
 	# Status Code
 	PS1+='%(?.., %{$fg[red]%}%?%{$reset_color%})'
+
+#	# vi mode
+#	if [[ ${KEYMAP} == "vicmd" ]]; then
+#	       PS1+=', '
+#	       PS1+="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
+#	fi
 
 	# Git
 	if git rev-parse --is-inside-work-tree 2> /dev/null | grep -q 'true' ; then
@@ -45,6 +49,8 @@ set_prompt() {
 		PS1+="%{$fg_bold[red]%}SUDO%{$reset_color%}"
 	fi
 
+
+	
 	PS1+="%{$fg[white]%}]: %{$reset_color%}% "
 }
 
