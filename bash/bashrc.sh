@@ -67,6 +67,17 @@ alias rsynk="rsync -avzhP"
 # export DOCKER_HOST='smazurov.docker.qa.lamoda.tech:2376'
 alias d='DOCKER_HOST=smazurov.docker.qa.lamoda.tech:2376 docker'
 alias n='NOMAD_ADDR="http://$(dig @smazurov.docker.qa.lamoda.tech +short http.nomad.service.consul | head -1):4646" nomad'
+# change docker
+d_env() { export DOCKER_HOST="tcp://$1.docker.qa.lamoda.tech:2376"; }
+d_local() { unset DOCKER_HOST; }
+# change nomad
+n_env() { export NOMAD_ADDR="http://smazurov.docker.qa.lamoda.tech:4646";  }
+n_local() { unset NOMAD_ADDR; }
+# change docker and nomad
+e_env() { d_env $1; n_env $1; }
+e_local() { d_local; n_local; }
+
+
 eval "$(direnv hook bash)"
 
 ## LM ssh pathfrase to keychain

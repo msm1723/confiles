@@ -63,3 +63,6 @@ set guioptions-=e	" disable GUI tabline
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
 colorscheme smyck
+
+" format xml
+set equalprg=xmllint\ --format\ -
