@@ -15,6 +15,9 @@ syntax on
 
 " leader
 let mapleader=","
+" no timeout for leader (wait forever for mapped key after pressing leader)
+set notimeout
+
 
 set clipboard^=unnamed,unnamedplus " merge with system clopboard
 
@@ -34,11 +37,29 @@ set smartcase		" ignore case if search pattern is all lowercase
 
 set cm=blowfish2	" set default encryption to blowfish2 algorithme
 
-" Motion mappings
-	nnoremap H 0
-	nnoremap L $
-	nnoremap J G
-	nnoremap K gg
+"""""
+""""" Mappings
+"""""
+" begingin of line
+nnoremap H 0
+" end of line
+nnoremap L $
+" begingin of file
+nnoremap J G
+" ending of file
+nnoremap K gg
+
+" left tab
+nnoremap <C-Left> :tabprevious<CR>
+" right tab
+nnoremap <C-Right> :tabnext<CR>
+" move tab left
+nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+" move tab right
+nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
+" Show all buffers in tabs, or to close all tabs (toggle: it alternately executes  :tab ball and :tabo).
+let notabs = 0
+nnoremap <silent> <F8> :let notabs=!notabs<Bar>:if notabs<Bar>:tabo<Bar>:else<Bar>:tab ball<Bar>:tabn<Bar>:endif<CR>
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
@@ -64,5 +85,7 @@ let g:enable_bold_font = 1
 let g:enable_italic_font = 1
 colorscheme smyck
 
-" format xml
-set equalprg=xmllint\ --format\ -
+" format json
+map <leader>pj :%!python -m json.tool<CR>
+" format json
+map <leader>px :%!xmllint % --format<CR>-
