@@ -87,5 +87,5 @@ colorscheme smyck
 
 " format json
 map <leader>pj :%!python -m json.tool<CR>
-" format json
+" format xml
 map <leader>px :%!xmllint % --format<CR>-
