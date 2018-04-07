@@ -1,0 +1,385 @@
+{
+  "Badge Text" : "",
+  "Working Directory" : "\/Users\/sergey.mazurov",
+  "Prompt Before Closing 2" : false,
+  "Selected Text Color" : {
+    "Green Component" : 0.9686274528503418,
+    "Red Component" : 0.9686274528503418,
+    "Blue Component" : 0.9686274528503418
+  },
+  "Rows" : 25,
+  "Ansi 11 Color" : {
+    "Green Component" : 0.88235294818878174,
+    "Red Component" : 0.99607843160629272,
+    "Blue Component" : 0.30196079611778259
+  },
+  "Use Italic Font" : true,
+  "HotKey Characters" : "",
+  "Foreground Color" : {
+    "Green Component" : 0.9686274528503418,
+    "Red Component" : 0.9686274528503418,
+    "Blue Component" : 0.9686274528503418
+  },
+  "HotKey Window Floats" : false,
+  "Right Option Key Sends" : 0,
+  "Character Encoding" : 4,
+  "Selection Color" : {
+    "Green Component" : 0.4543989896774292,
+    "Red Component" : 0.12700089812278748,
+    "Blue Component" : 0.51501965522766113
+  },
+  "Mouse Reporting" : true,
+  "Cursor Boost" : 0,
+  "Ansi 4 Color" : {
+    "Green Component" : 0.63921568630000003,
+    "Red Component" : 0.38431372549999998,
+    "Blue Component" : 0.76862745099999996
+  },
+  "Non-ASCII Anti Aliased" : true,
+  "Sync Title" : false,
+  "Disable Window Resizing" : true,
+  "Description" : "Default",
+  "Close Sessions On End" : true,
+  "Jobs to Ignore" : [
+    "rlogin",
+    "ssh",
+    "slogin",
+    "telnet"
+  ],
+  "Scrollback With Status Bar" : true,
+  "Scrollback Lines" : 1000,
+  "HotKey Window Reopens On Activation" : false,
+  "Flashing Bell" : true,
+  "Cursor Guide Color" : {
+    "Red Component" : 0.70213186740875244,
+    "Color Space" : "sRGB",
+    "Blue Component" : 1,
+    "Alpha Component" : 0.25,
+    "Green Component" : 0.9268307089805603
+  },
+  "BM Growl" : false,
+  "Ansi 3 Color" : {
+    "Green Component" : 0.64705882349999999,
+    "Red Component" : 0.76862745099999996,
+    "Blue Component" : 0
+  },
+  "Use Non-ASCII Font" : false,
+  "Link Color" : {
+    "Red Component" : 0,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.73423302173614502,
+    "Alpha Component" : 1,
+    "Green Component" : 0.35916060209274292
+  },
+  "Shortcut" : "",
+  "Bold Color" : {
+    "Green Component" : 1,
+    "Red Component" : 1,
+    "Blue Component" : 1
+  },
+  "Unlimited Scrollback" : true,
+  "Custom Command" : "No",
+  "HotKey Key Code" : 111,
+  "Keyboard Map" : {
+    "0xf700-0x260000" : {
+      "Action" : 10,
+      "Text" : "[1;6A"
+    },
+    "0x37-0x40000" : {
+      "Action" : 11,
+      "Text" : "0x1f"
+    },
+    "0x32-0x40000" : {
+      "Action" : 11,
+      "Text" : "0x00"
+    },
+    "0xf709-0x20000" : {
+      "Action" : 10,
+      "Text" : "[17;2~"
+    },
+    "0xf70c-0x20000" : {
+      "Action" : 10,
+      "Text" : "[20;2~"
+    },
+    "0xf729-0x20000" : {
+      "Action" : 10,
+      "Text" : "[1;2H"
+    },
+    "0xf72b-0x40000" : {
+      "Action" : 10,
+      "Text" : "[1;5F"
+    },
+    "0xf705-0x20000" : {
+      "Action" : 10,
+      "Text" : "[1;2Q"
+    },
+    "0xf703-0x260000" : {
+      "Action" : 10,
+      "Text" : "[1;6C"
+    },
+    "0xf700-0x220000" : {
+      "Action" : 10,
+      "Text" : "[1;2A"
+    },
+    "0xf701-0x280000" : {
+      "Action" : 11,
+      "Text" : "0x1b 0x1b 0x5b 0x42"
+    },
+    "0x38-0x40000" : {
+      "Action" : 11,
+      "Text" : "0x7f"
+    },
+    "0x33-0x40000" : {
+      "Action" : 11,
+      "Text" : "0x1b"
+    },
+    "0xf703-0x220000" : {
+      "Action" : 10,
+      "Text" : "[1;2C"
+    },
+    "0xf701-0x240000" : {
+      "Action" : 10,
+      "Text" : "[1;5B"
+    },
+    "0xf70d-0x20000" : {
+      "Action" : 10,
+      "Text" : "[21;2~"
+    },
+    "0xf702-0x260000" : {
+      "Action" : 10,
+      "Text" : "[1;6D"
+    },
+    "0xf729-0x40000" : {
+      "Action" : 10,
+      "Text" : "[1;5H"
+    },
+    "0xf706-0x20000" : {
+      "Action" : 10,
+      "Text" : "[1;2R"
+    },
+    "0x34-0x40000" : {
+      "Action" : 11,
+      "Text" : "0x1c"
+    },
+    "0xf700-0x280000" : {
+      "Action" : 11,
+      "Text" : "0x1b 0x1b 0x5b 0x41"
+    },
+    "0x2d-0x40000" : {
+      "Action" : 11,
+      "Text" : "0x1f"
+    },
+    "0xf70e-0x20000" : {
+      "Action" : 10,
+      "Text" : "[23;2~"
+    },
+    "0xf702-0x220000" : {
+      "Action" : 10,
+      "Text" : "[1;2D"
+    },
+    "0xf703-0x280000" : {
+      "Action" : 11,
+      "Text" : "0x1b 0x1b 0x5b 0x43"
+    },
+    "0xf700-0x240000" : {
+      "Action" : 10,
+      "Text" : "[1;5A"
+    },
+    "0xf707-0x20000" : {
+      "Action" : 10,
+      "Text" : "[1;2S"
+    },
+    "0xf70a-0x20000" : {
+      "Action" : 10,
+      "Text" : "[18;2~"
+    },
+    "0x35-0x40000" : {
+      "Action" : 11,
+      "Text" : "0x1d"
+    },
+    "0xf70f-0x20000" : {
+      "Action" : 10,
+      "Text" : "[24;2~"
+    },
+    "0xf703-0x240000" : {
+      "Action" : 10,
+      "Text" : "[1;5C"
+    },
+    "0xf701-0x260000" : {
+      "Action" : 10,
+      "Text" : "[1;6B"
+    },
+    "0xf702-0x280000" : {
+      "Action" : 11,
+      "Text" : "0x1b 0x1b 0x5b 0x44"
+    },
+    "0xf72b-0x20000" : {
+      "Action" : 10,
+      "Text" : "[1;2F"
+    },
+    "0x36-0x40000" : {
+      "Action" : 11,
+      "Text" : "0x1e"
+    },
+    "0xf708-0x20000" : {
+      "Action" : 10,
+      "Text" : "[15;2~"
+    },
+    "0xf701-0x220000" : {
+      "Action" : 10,
+      "Text" : "[1;2B"
+    },
+    "0xf70b-0x20000" : {
+      "Action" : 10,
+      "Text" : "[19;2~"
+    },
+    "0xf702-0x240000" : {
+      "Action" : 10,
+      "Text" : "[1;5D"
+    },
+    "0xf704-0x20000" : {
+      "Action" : 10,
+      "Text" : "[1;2P"
+    }
+  },
+  "Log Directory" : "\/Users\/sergey.mazurov\/SSH_sessions_logs",
+  "Ansi 14 Color" : {
+    "Green Component" : 0.85098039219999999,
+    "Red Component" : 0.41568627450000001,
+    "Blue Component" : 0.81176470590000005
+  },
+  "Ansi 2 Color" : {
+    "Green Component" : 0.66376459600000004,
+    "Red Component" : 0.4915682375,
+    "Blue Component" : 0
+  },
+  "Send Code When Idle" : false,
+  "ASCII Anti Aliased" : true,
+  "Tags" : [
+
+  ],
+  "Ansi 9 Color" : {
+    "Green Component" : 0.51372549020000002,
+    "Red Component" : 0.83921568629999999,
+    "Blue Component" : 0.48627450979999998
+  },
+  "Use Bold Font" : true,
+  "Silence Bell" : true,
+  "Ansi 12 Color" : {
+    "Green Component" : 0.81176471710205078,
+    "Red Component" : 0.55294120311737061,
+    "Blue Component" : 0.94117647409439087
+  },
+  "Window Type" : 2,
+  "Use Bright Bold" : true,
+  "Has Hotkey" : true,
+  "HotKey Modifier Activation" : 0,
+  "Cursor Text Color" : {
+    "Green Component" : 1,
+    "Red Component" : 1,
+    "Blue Component" : 1
+  },
+  "HotKey Window Dock Click Action" : 1,
+  "Default Bookmark" : "No",
+  "Cursor Color" : {
+    "Green Component" : 0.73333334922790527,
+    "Red Component" : 0.73333334922790527,
+    "Blue Component" : 0.73333334922790527
+  },
+  "Ansi 1 Color" : {
+    "Green Component" : 0.25617697830000002,
+    "Red Component" : 0.72015768290000004,
+    "Blue Component" : 0.1933501363
+  },
+  "Name" : "profile",
+  "Blinking Cursor" : true,
+  "Guid" : "E0D46666-FEDC-48A0-BDFC-F4B9F4043083",
+  "Ansi 8 Color" : {
+    "Green Component" : 0.47999998927116394,
+    "Red Component" : 0.47999998927116394,
+    "Blue Component" : 0.47999998927116394
+  },
+  "Ansi 10 Color" : {
+    "Green Component" : 0.94509803920000002,
+    "Red Component" : 0.76862745099999996,
+    "Blue Component" : 0.2156862745
+  },
+  "Idle Code" : 0,
+  "Badge Color" : {
+    "Red Component" : 1,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0,
+    "Alpha Component" : 0.5,
+    "Green Component" : 0.1491314172744751
+  },
+  "Automatically Log" : true,
+  "Ambiguous Double Width" : false,
+  "Blur Radius" : 30,
+  "Cursor Type" : 0,
+  "Ansi 0 Color" : {
+    "Green Component" : 0,
+    "Red Component" : 0,
+    "Blue Component" : 0
+  },
+  "Session Close Undo Timeout" : 9000,
+  "Blur" : false,
+  "Normal Font" : "Hack-Regular 14",
+  "Vertical Spacing" : 1,
+  "Ansi 7 Color" : {
+    "Green Component" : 0.6298518180847168,
+    "Red Component" : 0.62973332405090332,
+    "Blue Component" : 0.6297031044960022
+  },
+  "Space" : -1,
+  "HotKey Window AutoHides" : false,
+  "Command" : "",
+  "Terminal Type" : "xterm-256color",
+  "Horizontal Spacing" : 1,
+  "Option Key Sends" : 2,
+  "Only The Default BG Color Uses Transparency" : false,
+  "HotKey Window Animates" : false,
+  "Blink Allowed" : true,
+  "Ansi 15 Color" : {
+    "Green Component" : 0.9686274528503418,
+    "Red Component" : 0.9686274528503418,
+    "Blue Component" : 0.9686274528503418
+  },
+  "HotKey Modifier Flags" : 0,
+  "Minimum Contrast" : 0,
+  "Ansi 6 Color" : {
+    "Green Component" : 0.45098039507865906,
+    "Red Component" : 0.12549020349979401,
+    "Blue Component" : 0.51372551918029785
+  },
+  "Transparency" : 0.11191108819796955,
+  "HotKey Activated By Modifier" : true,
+  "Background Color" : {
+    "Green Component" : 0.1061420664191246,
+    "Red Component" : 0.10612169653177261,
+    "Blue Component" : 0.10611827671527863
+  },
+  "Initial Text" : "tmux ls",
+  "Screen" : -2,
+  "HotKey Characters Ignoring Modifiers" : "",
+  "Bound Hosts" : [
+
+  ],
+  "Non Ascii Font" : "Monaco 12",
+  "Ansi 13 Color" : {
+    "Green Component" : 0.60392156860000001,
+    "Red Component" : 0.96862745100000003,
+    "Blue Component" : 1
+  },
+  "Use Tab Color" : false,
+  "Columns" : 80,
+  "HotKey Alternate Shortcuts" : [
+
+  ],
+  "Visual Bell" : true,
+  "Custom Directory" : "No",
+  "Ansi 5 Color" : {
+    "Green Component" : 0.54117647059999996,
+    "Red Component" : 0.72941176470000002,
+    "Blue Component" : 0.80000000000000004
+  }
+}
