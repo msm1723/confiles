@@ -1,15 +1,39 @@
-" turn filetype detection off and, even if it's not strictly
-" necessary, disable loading of indent scripts and filetype plugins
-filetype off
-filetype plugin indent off
+"""
+""" Try to load minpac
+"""
 
-" pathogen runntime injection and help indexing
-call pathogen#infect()
-call pathogen#helptags()
+packadd minpac
+if !exists('*minpac#init')
+  " In case if minpac is not available init with settings for plugin-less environment:
+  " ...
+else
+  " In case if minpac is available init with verbosity 3 (to see minpac work):
+  call minpac#init({'verbose': 3})
+  " List of additional packs minpac could install:
+  call minpac#add('k-takata/minpac', {'type': 'opt'})
+  call minpac#add('airblade/vim-gitgutter')
+  call minpac#add('altercation/vim-colors-solarized')
+  call minpac#add('itchyny/lightline.vim')
+  call minpac#add('prettier/vim-prettier')
+  call minpac#add('tpope/vim-commentary')
+  call minpac#add('tpope/vim-endwise')
+  call minpac#add('tpope/vim-fugitive')
+  call minpac#add('tpope/vim-repeat')
+  call minpac#add('tpope/vim-surround')
+  " Minpac utility commands (run manually):
+  command! PackUpdate call minpac#update()
+  command! PackClean call minpac#clean()
+  command! PackStatus call minpac#status()
+  " Plugin settings here:
+  " ...
+endif
+
+"""
+""" Init all common (packet agnostic) nvim settings
+"""
 
 " turn filetype detection, indent scripts and filetype plugins on
 filetype plugin indent on
-
 " and syntax highlighting too
 syntax on
 
@@ -17,7 +41,6 @@ syntax on
 let mapleader=","
 " no timeout for leader (wait forever for mapped key after pressing leader)
 set notimeout
-
 
 set clipboard^=unnamed,unnamedplus " merge with system clopboard
 
@@ -34,8 +57,6 @@ set lazyredraw		" redraw only when we need to
 
 set ignorecase		" ignore case when searching
 set smartcase		" ignore case if search pattern is all lowercase
-
-set cm=blowfish2	" set default encryption to blowfish2 algorithme
 
 """""
 """"" Mappings
@@ -70,20 +91,6 @@ cmap w!! w !sudo tee > /dev/null %
 
 " map select all to CTRL-a
 map <C-a> <esc>ggVG<CR>
-
-"""""
-""""" plugins settings
-"""""
-
-" settings for flagship.vim
-set laststatus=2	" always show the statusline
-set showtabline=2	" always show the statusline
-set guioptions-=e	" disable GUI tabline
-
-" settings for look and feel
-let g:enable_bold_font = 1
-let g:enable_italic_font = 1
-colorscheme smyck
 
 " format json
 map <leader>pj :%!python -m json.tool<CR>
