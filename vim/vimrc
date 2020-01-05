@@ -20,64 +20,50 @@ else
   call minpac#add('tpope/vim-fugitive')
   call minpac#add('tpope/vim-repeat')
   call minpac#add('tpope/vim-surround')
+  call minpac#add('machakann/vim-highlightedyank')
   " Minpac utility commands (run manually):
   command! PackUpdate call minpac#update()
   command! PackClean call minpac#clean()
   command! PackStatus call minpac#status()
   " Plugin settings here:
-  " ...
+  " vim-colors-solarized
+  syntax enable
+  set background=dark
+  " Uncomment next line to use vim-colors-solarized with Solarized_Dark_Patched iterm2 schema
+  " let g:solarized_termcolors=256
+  colorscheme solarized
 endif
 
 """
 """ Init all common (packet agnostic) nvim settings
 """
-
-" turn filetype detection, indent scripts and filetype plugins on
-filetype plugin indent on
-" and syntax highlighting too
-syntax on
-
-" leader
-let mapleader=","
-" no timeout for leader (wait forever for mapped key after pressing leader)
-set notimeout
-
-set clipboard^=unnamed,unnamedplus " merge with system clopboard
-
+set inccommand=nosplit	" live substitute
 set hlsearch		" highlight search results
+set smartcase		" ignore case if search pattern is all lowercase
+set ignorecase		" ignore case when searching
 set nocompatible	" disable vi-compatibility
-set showmode		" always show what mode we're currently editing in
 set list		" show whitespaces
 set number		" show line numbers
 set mouse=a		" enable mouse
-set showcmd		" show <leader> pressed
-set cursorline		" highlight current line
 set wildmenu		" show mathch files as menu when use TAB
 set lazyredraw		" redraw only when we need to
+set cursorline		" highlight current lin
 
-set ignorecase		" ignore case when searching
-set smartcase		" ignore case if search pattern is all lowercase
+" turn filetype detection, indent scripts and filetype plugins on
+filetype plugin indent on
 
-"""""
-""""" Mappings
-"""""
-" begingin of line
-nnoremap H 0
-" end of line
-nnoremap L $
-" begingin of file
-nnoremap J G
-" ending of file
-nnoremap K gg
+set clipboard^=unnamed,unnamedplus " merge with system clopboard
 
-" left tab
-nnoremap <C-Left> :tabprevious<CR>
-" right tab
-nnoremap <C-Right> :tabnext<CR>
-" move tab left
-nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-" move tab right
-nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
+""""
+"""" Mappings
+""""
+nnoremap H 0	" begingin of line
+nnoremap L $	" end of line
+nnoremap J G	" begingin of file
+nnoremap K gg	" ending of file
+
+map <C-a> <esc>ggVG<CR> " map select all to CTRL-a
+
 " Show all buffers in tabs, or to close all tabs (toggle: it alternately executes  :tab ball and :tabo).
 let notabs = 0
 nnoremap <silent> <F8> :let notabs=!notabs<Bar>:if notabs<Bar>:tabo<Bar>:else<Bar>:tab ball<Bar>:tabn<Bar>:endif<CR>
@@ -85,14 +71,14 @@ nnoremap <silent> <F8> :let notabs=!notabs<Bar>:if notabs<Bar>:tabo<Bar>:else<Ba
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 
-"set showmatch		" highlight matching [{()}]	ALREADY WORKS VIA vim-sensitive
-"nnoremap j gj		" move vertically by visual line	
-"nnoremap k gk		" ALREADY WORKS VIA vim-sensitive
+"""
+""" Leader actions
+"""
+map <SPACE> <leader>
+" let mapleader = "\" " common leader mapping (default)
 
-" map select all to CTRL-a
-map <C-a> <esc>ggVG<CR>
+set notimeout		" no timeout for leader (wait forever for mapped key after pressing leader)
+set showcmd		" show <leader> pressed
 
-" format json
-map <leader>pj :%!python -m json.tool<CR>
-" format xml
-map <leader>px :%!xmllint % --format<CR>-
+map <leader>pj :%!python -m json.tool<CR> " format json
+map <leader>px :%!xmllint % --format<CR> " format xml
