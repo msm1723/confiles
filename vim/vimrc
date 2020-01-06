@@ -1,6 +1,4 @@
 """
-""" Try to load minpac
-"""
 packadd minpac
 if !exists('*minpac#init')
   """ In case if minpac is not available init with settings for plugin-less environment:
@@ -95,3 +93,27 @@ set showcmd		" show <leader> pressed
 
 map <leader>pj :%!python -m json.tool<CR>	" format json
 map <leader>px :%!xmllint % --format<CR>	" format xml
+noremap <Leader>w :w<CR>			" Save the current buffer using the leader key
+noremap <Leader>e :wq<CR>			" Save and exit Vim using the leader key
+noremap <Leader>q :q!<CR>			" Exit without saving using the leader key
+nnoremap <leader>c :nohl<CR>			" Clear highlighting
+
+""" Kill the arrow keys
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+
+""""
+"""" Just a reminders for some usefull combinations
+""""
+" insert mode actions
+"CTRL-W    delete word to the left of cursor
+"CTRL-O D  delete everything to the right of cursor
+"CTRL-U    delete everything to the left of cursor
+"CTRL-H    backspace/delete
+"CTRL-J    insert newline (easier than reaching for the return key)
+"CTRL-T    indent current line
+"CTRL-D    un-indent current line
