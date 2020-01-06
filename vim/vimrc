@@ -1,58 +1,66 @@
 """
 """ Try to load minpac
 """
-
 packadd minpac
 if !exists('*minpac#init')
-  " In case if minpac is not available init with settings for plugin-less environment:
+  """ In case if minpac is not available init with settings for plugin-less environment:
   " ...
 else
-  " In case if minpac is available init with verbosity 3 (to see minpac work):
+  """ In case if minpac is available init with verbosity 3 (to see minpac work):
   call minpac#init({'verbose': 3})
-  " List of additional packs minpac could install:
-  call minpac#add('k-takata/minpac', {'type': 'opt'})
-  call minpac#add('airblade/vim-gitgutter')
-  call minpac#add('altercation/vim-colors-solarized')
-  call minpac#add('itchyny/lightline.vim')
-  call minpac#add('prettier/vim-prettier')
-  call minpac#add('tpope/vim-commentary')
-  call minpac#add('tpope/vim-endwise')
-  call minpac#add('tpope/vim-fugitive')
-  call minpac#add('tpope/vim-repeat')
-  call minpac#add('tpope/vim-surround')
-  call minpac#add('machakann/vim-highlightedyank')
-  " Minpac utility commands (run manually):
+  """" List of additional packs minpac could install:
+  call minpac#add('k-takata/minpac', {'type': 'opt'})		" pack manager .config/nvim/pack/{opt, start}
+  call minpac#add('airblade/vim-gitgutter') 			" show git diff in nvim gutter
+  call minpac#add('altercation/vim-colors-solarized') 		" colorscheme
+  call minpac#add('itchyny/lightline.vim') 			" status line colorscheme
+  call minpac#add('prettier/vim-prettier') 			" will auto format files if they have/support the @format pragma annotation in the header of the file
+  call minpac#add('tpope/vim-commentary') 			" commentout line 'gcc', commentout patagraph 'gcap', commentout visual selection 'gc'
+  call minpac#add('tpope/vim-endwise') 				" end certain structures automatically (if...end)
+  call minpac#add('tpope/vim-fugitive') 			" git commands like :G for git status
+  call minpac#add('tpope/vim-repeat') 				" plagin for repeat command . work well with (map)ped commands
+  call minpac#add('tpope/vim-surround') 			" work with surroundings like '' or ()
+  call minpac#add('machakann/vim-highlightedyank') 		" make yank visible
+  """ Minpac utility commands (run manually):
   command! PackUpdate call minpac#update()
   command! PackClean call minpac#clean()
   command! PackStatus call minpac#status()
-  " Plugin settings here:
+  """ Plugin settings here:
   " vim-colors-solarized
   syntax enable
   set background=dark
   " Uncomment next line to use vim-colors-solarized with Solarized_Dark_Patched iterm2 schema
-  " let g:solarized_termcolors=256
+  "let g:solarized_termcolors=256
   colorscheme solarized
+  " itchyny/lightline.vim
+  let g:lightline = {'colorscheme': 'solarized'}
 endif
 
 """
 """ Init all common (packet agnostic) nvim settings
 """
-set inccommand=nosplit	" live substitute
-set hlsearch		" highlight search results
-set smartcase		" ignore case if search pattern is all lowercase
-set ignorecase		" ignore case when searching
-set nocompatible	" disable vi-compatibility
-set list		" show whitespaces
-set number		" show line numbers
-set mouse=a		" enable mouse
-set wildmenu		" show mathch files as menu when use TAB
-set lazyredraw		" redraw only when we need to
-set cursorline		" highlight current lin
+set splitbelow				" Horizontal split below current.
+set splitright				" Vertical split to right of current.
+set inccommand=nosplit			" live substitute
+set hlsearch				" highlight search results
+set smartcase				" ignore case if search pattern is all lowercase
+set ignorecase				" ignore case when searching
+set nocompatible			" disable vi-compatibility
+set list				" show whitespaces
+set number				" show line numbers
+set mouse=a				" enable mouse
+set wildmenu				" show mathch files as menu when use TAB
+set lazyredraw				" redraw only when we need to
+set cursorline				" highlight current lin
+set hidden				" make it possible to switch between buffers without saving
+set clipboard^=unnamed,unnamedplus 	" merge with system clopboard
 
-" turn filetype detection, indent scripts and filetype plugins on
-filetype plugin indent on
-
-set clipboard^=unnamed,unnamedplus " merge with system clopboard
+"""
+""" Filetype settings
+"""
+"filetype indent plugin on " turn filetype detection, indent scripts and filetype plugins on
+filetype on " try to recoginize type of edited file
+filetype plugin on " load plagins for recognized file
+filetype indent on " load scripts for indetion of recognized file
 
 """"
 """" Mappings
@@ -62,7 +70,7 @@ nnoremap L $	" end of line
 nnoremap J G	" begingin of file
 nnoremap K gg	" ending of file
 
-map <C-a> <esc>ggVG<CR> " map select all to CTRL-a
+"map <C-a> <esc>ggVG<CR>		" map select all to CTRL-a
 
 " Show all buffers in tabs, or to close all tabs (toggle: it alternately executes  :tab ball and :tabo).
 let notabs = 0
@@ -71,14 +79,19 @@ nnoremap <silent> <F8> :let notabs=!notabs<Bar>:if notabs<Bar>:tabo<Bar>:else<Ba
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 
+" Use <C-S> to clear the highlighting of :set hlsearch.
+if maparg('<C-S>', 'n') ==# ''
+  nnoremap <silent> <C-S> :nohlsearch<CR><C-S>
+endif
+
 """
 """ Leader actions
 """
 map <SPACE> <leader>
-" let mapleader = "\" " common leader mapping (default)
+"let mapleader = "\" " common leader mapping (default)
 
 set notimeout		" no timeout for leader (wait forever for mapped key after pressing leader)
 set showcmd		" show <leader> pressed
 
-map <leader>pj :%!python -m json.tool<CR> " format json
-map <leader>px :%!xmllint % --format<CR> " format xml
+map <leader>pj :%!python -m json.tool<CR>	" format json
+map <leader>px :%!xmllint % --format<CR>	" format xml
